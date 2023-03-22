@@ -1,0 +1,524 @@
+openapi: 3.0.3
+info:
+  title: Motionclash
+  version: 1.0.0
+servers:
+  - url: https://localhost:7000
+paths:
+    /user/{id}:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the User to retrieve, update or delete.
+          schema:
+            type: integer
+      get:
+        summary: Get a User by ID.
+        operationId: getUserById
+        tags:
+          - User
+        responses:
+          200:
+            description: User object
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/User'
+          404:
+            description: User not found
+
+      put:
+        summary: Upsert a User by ID.
+        operationId: upsertUserById
+        tags:
+          - User
+        requestBody:
+          description: User object to upsert.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        responses:
+          200:
+            description: User object
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/User'
+          201:
+            description: User created
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/User'
+          404:
+            description: User not found
+
+      delete:
+        summary: Delete a User by ID.
+        operationId: deleteUserById
+        tags:
+          - User
+        responses:
+          204:
+            description: User deleted
+          404:
+            description: User not found
+
+    /user:
+      get:
+        summary: Get all Users.
+        operationId: getAllUsers
+        tags:
+          - User        
+        responses:
+          200:
+            description: List of User objects
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/User'
+
+      post:
+        summary: Create a new User.
+        operationId: createUser
+        tags:
+          - User        
+        requestBody:
+          description: User object to create.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        responses:
+          201:
+            description: User created
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/User'
+                  
+    /group/{id}:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the UserGroup to retrieve, update or delete.
+          schema:
+            type: integer
+      get:
+        summary: Get a UserGroup by ID.
+        operationId: getUserGroupById
+        tags:
+          - UserGroup
+        responses:
+          200:
+            description: UserGroup object
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/UserGroup'
+          404:
+            description: UserGroup not found
+
+      put:
+        summary: Upsert a UserGroup by ID.
+        operationId: upsertUserGroupById
+        tags:
+          - UserGroup
+        requestBody:
+          description: UserGroup object to upsert.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserGroup'
+        responses:
+          200:
+            description: UserGroup object
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/UserGroup'
+          201:
+            description: UserGroup created
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/UserGroup'
+          404:
+            description: UserGroup not found
+
+      delete:
+        summary: Delete a UserGroup by ID.
+        operationId: deleteUserGroupById
+        tags:
+          - UserGroup
+        responses:
+          204:
+            description: UserGroup deleted
+          404:
+            description: UserGroup not found
+
+    /group:
+      get:
+        summary: Get all UserGroups.
+        operationId: getAllUserGroups
+        tags:
+          - UserGroup
+        responses:
+          200:
+            description: List of UserGroup objects
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/UserGroup'
+
+      post:
+        summary: Create a new UserGroup.
+        operationId: createUserGroup
+        tags:
+          - UserGroup
+        requestBody:
+          description: UserGroup object to create.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserGroup'
+        responses:
+          201:
+            description: UserGroup created
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/UserGroup'
+                  
+                  
+    /race/{id}:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the Race to retrieve, update or delete.
+          schema:
+            type: integer
+      get:
+        summary: Get a Race by ID.
+        operationId: getRaceById
+        tags:
+          - Race
+        responses:
+          200:
+            description: Race object
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Race'
+          404:
+            description: Race not found
+
+      put:
+        summary: Upsert a Race by ID.
+        operationId: upsertRaceById
+        tags:
+          - Race
+        requestBody:
+          description: Race object to upsert.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Race'
+        responses:
+          200:
+            description: Race object
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Race'
+          201:
+            description: Race created
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Race'
+          404:
+            description: Race not found
+
+      delete:
+        summary: Delete a Race by ID.
+        operationId: deleteRaceById
+        tags:
+          - Race
+        responses:
+          204:
+            description: Race deleted
+          404:
+            description: Race not found
+
+    /race:
+      get:
+        summary: Get all Races.
+        operationId: getAllRaces
+        tags:
+          - Race
+        responses:
+          200:
+            description: List of Race objects
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Race'
+
+      post:
+        summary: Create a new Race.
+        operationId: createRace
+        tags:
+          - Race
+        requestBody:
+          description: Race object to create.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Race'
+        responses:
+          201:
+            description: Race created
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Race'
+                  
+    /score/{id}:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the Score to retrieve, update or delete.
+          schema:
+            type: integer
+      get:
+        summary: Get a Score by ID.
+        operationId: getScoreById
+        tags:
+          - Score
+        responses:
+          200:
+            description: Score object
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Score'
+          404:
+            description: Score not found
+
+      put:
+        summary: Upsert a Score by ID.
+        operationId: upsertScoreById
+        tags:
+          - Score
+        requestBody:
+          description: Score object to upsert.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Score'
+        responses:
+          200:
+            description: Score object
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Score'
+          201:
+            description: Score created
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Score'
+          404:
+            description: Score not found
+
+      delete:
+        summary: Delete a Score by ID.
+        operationId: deleteScoreById
+        tags:
+          - Score
+        responses:
+          204:
+            description: Score deleted
+          404:
+            description: Score not found
+
+    /score:
+      get:
+        summary: Get all Scores.
+        operationId: getAllScores
+        tags:
+          - Score
+        responses:
+          200:
+            description: List of Score objects
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Score'
+
+      post:
+        summary: Create a new Score.
+        operationId: createScore
+        tags:
+          - Score
+        requestBody:
+          description: Score object to create.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Score'
+        responses:
+          201:
+            description: Score created
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Score'
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        username:
+          type: string
+          example: theUser
+        firstName:
+          type: string
+          example: John
+        lastName:
+          type: string
+          example: James
+        email:
+          type: string
+          example: john@email.com
+        password:
+          type: string
+          example: '12345'
+        phone:
+          type: string
+          example: '+36301234567'
+        profilePicture:
+          $ref: "#/components/schemas/Image"
+
+    UserGroup:
+      type: object
+      properties:
+        id: 
+          type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        groupName:
+          type: string
+          example: The Avangers
+        leaderId:
+          type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        raceId:
+          type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        users:
+          type: array
+          items:           
+            $ref: "#/components/schemas/User"
+        score:
+            $ref: "#/components/schemas/Score"        
+
+    Race:
+      type: object
+      properties: 
+        id:
+          type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        teams:
+          type: array
+          items:
+            $ref: "#/components/schemas/UserGroup"
+        eventImages:
+          type: array
+          items: 
+            $ref: "#/components/schemas/Image"
+        Waypoints:
+          type: array
+          items:
+            $ref: "#/components/schemas/Waypoint"
+
+
+    Score:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        raceId:
+          type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        groupId:
+          type: string
+          example: 123e4567-e89b-12d3-a456-426614174000
+        RoutePoints:
+          type: array
+          items: 
+            $ref: "#/components/schemas/ActiveWaypoint"
+
+    
+    Image:
+      type: object
+      properties:
+        id: 
+          type: string 
+          example: 123e4567-e89b-12d3-a456-426614174000
+        imageType:
+          type: string
+          enum:
+            - ProfilePicture
+            - EventPicture
+        imagePath:
+          type: string
+    
+    Waypoint:
+      type: object
+      properties:
+        latitiude:
+          type: number
+        longitude:
+          type: number
+          
+    ActiveWaypoint:
+      allOf:
+        - $ref: '#/components/schemas/Waypoint'
+        - type: object
+          properties:
+            EstimatedTime:
+              type: string
+            ReachedTime:
+              type: string
+      
+          
+        
+          
