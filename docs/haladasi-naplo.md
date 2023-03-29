@@ -30,3 +30,10 @@ Először is elkészítettem a haladási tevet a félévre, ez [itt](https://doc
 
 Ezután elkezdtem kidolgozni a képernyőterveket egy figma projektben, ez [itt](https://www.figma.com/file/WoH698ejQnfcTMaumpJUYI/Untitled?node-id=0%3A1&t=nrwNWCSTjWmsbac0-1) követhető nyomon
 
+# 4.hét
+
+Elkészítettem a képernyőterveket az alkalmazáshoz, ahogy azt megbeszéltük, ez továbbra is [itt](https://www.figma.com/file/WoH698ejQnfcTMaumpJUYI/Untitled?node-id=0%3A1&t=nrwNWCSTjWmsbac0-1) található
+
+A bejelentkezés és regisztráció képernyőket nem terveztem meg, mert egyrészt ezek viszonylag egyértelműek, valószínüleg majd az a szolgáltatás adja amelyet a felhasználókezelésre használni fogok.
+
+Sajnos a héten kevesebb időm volt, így az API leíró teljes értékű elkészítése még hátra van, de a UI tervek sokat segítettek abban hogy milyen végpontokra lesz majd szükség.
