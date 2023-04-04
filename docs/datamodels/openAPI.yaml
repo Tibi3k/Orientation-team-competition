@@ -200,7 +200,59 @@ paths:
               application/json:
                 schema:
                   $ref: '#/components/schemas/UserGroup'
-                  
+    /group/{groupId}/{id}:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the User to add
+          schema:
+            type: integer
+        - name: groupId
+          in: path
+          required: true
+          description: ID of the Group to add the user to
+          schema:
+            type: integer
+      post:
+        summary: Add a user to the user group
+        operationId: AddUserToUserGroup
+        tags:
+          - UserGroup
+        responses:
+          200:
+            description: User added
+      delete:
+        summary: Remove user from group
+        operationId: RemoveUserFromGroup
+        tags:
+          - UserGroup
+        responses:
+          204:
+            description: User removed
+    /group/race/{id}:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the associated race
+          schema:
+            type: integer
+      get:
+        summary: Gets all the groups in the given race
+        operationId: GetAllGroupsInARace
+        tags:
+          - UserGroup
+        responses:
+          200:
+            description: UserGroup created
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/UserGroup' 
+    
                   
     /race/{id}:
       parameters:
@@ -397,7 +449,206 @@ paths:
               application/json:
                 schema:
                   $ref: '#/components/schemas/Score'
+                  
+                  
+    /score/race/{id}:
+      get:
+        parameters:
+        - name: id
+          in: path
+          required: true
+          description: Id of the race to retrive scores for.
+          schema:
+            type: integer
+        summary: Get all Scores of a race.
+        operationId: getAllScoresOfRace
+        tags:
+          - Score
+        responses:
+          200:
+            description: List of Score objects in a race
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Score'
+      
+    /score/group/{id}:              
+      get:
+        parameters:
+        - name: id
+          in: path
+          required: true
+          description: Id of the group to retrive score for.
+          schema:
+            type: integer
+        summary: Get score of a group
+        operationId: getScoreOfGroup
+        tags:
+          - Score
+        responses:
+          200:
+            description: List of Score objects
+            content:
+              application/json:
+                schema:
+                    $ref: '#/components/schemas/Score'
+      post:
+        parameters:
+        - name: id
+          in: path
+          required: true
+          description: Id of the group
+          schema:
+            type: integer
+        summary: The given group reached a new waypoint
+        operationId: WaypointReached
+        tags:
+          - Score
+        requestBody:
+          description: Waypoint object to complete.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Waypoint'
+        responses:
+          200:
+            description: Result of the operation
 
+    /images:
+      get:
+        tags:
+         - Image
+        summary: Get a list of images
+        description: Returns a list of images in the database
+        responses:
+          '200':
+            description: A list of images
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Image'
+      post:
+        tags:
+         - Image
+        summary: Upload a new image
+        description: Uploads a new image to the database
+        requestBody:
+          required: true
+          content:
+            image/jpeg:
+              schema:
+                type: string
+                format: binary
+            image/png:
+              schema:
+                type: string
+                format: binary
+        responses:
+          '201':
+            description: The uploaded image
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Image'
+    /images/{id}:
+      get:
+        tags:
+         - Image
+        summary: Get an image by ID
+        description: Returns an image with the specified ID
+        parameters:
+          - name: id
+            in: path
+            description: The ID of the image to retrieve
+            required: true
+            schema:
+              type: integer
+              format: int64
+        responses:
+          '200':
+            description: The requested image
+            content:
+              application / json:
+                schema:
+                  $ref: '#/components/schemas/Image'
+          '404':
+            description: Image not found
+      put:
+        tags:
+         - Image
+        summary: Update an image by ID
+        description: Updates an image with the specified ID
+        parameters:
+          - name: id
+            in: path
+            description: The ID of the image to update
+            required: true
+            schema:
+              type: integer
+              format: int64
+        requestBody:
+          required: true
+          content:
+            application / json:
+              schema:
+                $ref: '#/components/schemas/Image'
+        responses:
+          '200':
+            description: The updated image
+            content:
+              application / json:
+                schema:
+                  $ref: '#/components/schemas/Image'
+          '404':
+            description: Image not found
+      delete:
+        tags:
+         - Image
+        summary: Delete an image by ID
+        description: Deletes an image with the specified ID
+        parameters:
+          - name: id
+            in: path
+            description: The ID of the image to delete
+            required: true
+            schema:
+              type: integer
+              format: int64
+        responses:
+          '204':
+            description: Image deleted
+          '404':
+            description: Image not found
+            
+    /image/race/{id}:
+      get:
+        parameters:
+          - name: id
+            in: path
+            description: Id Of the reace to get images of
+            required: true
+            schema:
+              type: integer
+        summary: Get all Scores of a race.
+        operationId: getImagesOfRace
+        tags:
+         - Image
+        responses:
+          200:
+            description: List of Score objects in a race
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Image'
+        
+            
 components:
   schemas:
     User:
