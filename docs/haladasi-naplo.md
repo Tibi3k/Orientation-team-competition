@@ -37,3 +37,14 @@ Elkészítettem a képernyőterveket az alkalmazáshoz, ahogy azt megbeszéltük
 A bejelentkezés és regisztráció képernyőket nem terveztem meg, mert egyrészt ezek viszonylag egyértelműek, valószínüleg majd az a szolgáltatás adja amelyet a felhasználókezelésre használni fogok.
 
 Sajnos a héten kevesebb időm volt, így az API leíró teljes értékű elkészítése még hátra van, de a UI tervek sokat segítettek abban hogy milyen végpontokra lesz majd szükség.
+
+# 5.hét
+
+A hét során befejeztem az OpenAPI leíró kidolgozását ez mostmár egy teljes képet az a kliens és a szerver közötti kapcsolatról.
+
+Ezután az openapi-generator-cli segítségével létrehoztam mint a klienshez tartozó angualar modulet-t mind magát a szervert kotlin-springben
+Ezzel volt annyi érdekesség hogy a kotlin nyelv nem megadható az online felületen elérhető generátorban szóval muszály volt lokális generátort használni.
+
+Jelenleg már mindkét projekt helyesen működik alapvető működésekben. Létrehoztam előre egy proxyt, hogy  a CORS hibákkal ne legyen probléma fjelesztés során.
+
+Végül próbáltam átírni a beépített material-theme alap színeit saját színekre mert én is egy hasonló színcsomagból dolgozok és jó lenne ha nem kellene ezeket mindenhol megadni, hanem az amgular material igazodna hozzá, de ezzel még nem jártam sikerrel.

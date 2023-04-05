@@ -1,0 +1,11 @@
+export * from './image.service';
+import { ImageService } from './image.service';
+export * from './race.service';
+import { RaceService } from './race.service';
+export * from './score.service';
+import { ScoreService } from './score.service';
+export * from './user.service';
+import { UserService } from './user.service';
+export * from './userGroup.service';
+import { UserGroupService } from './userGroup.service';
+export const APIS = [ImageService, RaceService, ScoreService, UserService, UserGroupService];

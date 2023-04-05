@@ -5,7 +5,7 @@ info:
 servers:
   - url: https://localhost:7000
 paths:
-    /user/{id}:
+    /api/user/{id}:
       parameters:
         - name: id
           in: path
@@ -67,7 +67,7 @@ paths:
           404:
             description: User not found
 
-    /user:
+    /api/user:
       get:
         summary: Get all Users.
         operationId: getAllUsers
@@ -103,7 +103,7 @@ paths:
                 schema:
                   $ref: '#/components/schemas/User'
                   
-    /group/{id}:
+    /api/group/{id}:
       parameters:
         - name: id
           in: path
@@ -165,7 +165,7 @@ paths:
           404:
             description: UserGroup not found
 
-    /group:
+    /api/group:
       get:
         summary: Get all UserGroups.
         operationId: getAllUserGroups
@@ -200,7 +200,7 @@ paths:
               application/json:
                 schema:
                   $ref: '#/components/schemas/UserGroup'
-    /group/{groupId}/{id}:
+    /api/group/{groupId}/{id}:
       parameters:
         - name: id
           in: path
@@ -230,7 +230,7 @@ paths:
         responses:
           204:
             description: User removed
-    /group/race/{id}:
+    /api/group/race/{id}:
       parameters:
         - name: id
           in: path
@@ -254,7 +254,7 @@ paths:
                     $ref: '#/components/schemas/UserGroup' 
     
                   
-    /race/{id}:
+    /api/race/{id}:
       parameters:
         - name: id
           in: path
@@ -316,7 +316,7 @@ paths:
           404:
             description: Race not found
 
-    /race:
+    /api/race:
       get:
         summary: Get all Races.
         operationId: getAllRaces
@@ -352,7 +352,7 @@ paths:
                 schema:
                   $ref: '#/components/schemas/Race'
                   
-    /score/{id}:
+    /api/score/{id}:
       parameters:
         - name: id
           in: path
@@ -414,7 +414,7 @@ paths:
           404:
             description: Score not found
 
-    /score:
+    /api/score:
       get:
         summary: Get all Scores.
         operationId: getAllScores
@@ -451,7 +451,7 @@ paths:
                   $ref: '#/components/schemas/Score'
                   
                   
-    /score/race/{id}:
+    /api/score/race/{id}:
       get:
         parameters:
         - name: id
@@ -474,7 +474,7 @@ paths:
                   items:
                     $ref: '#/components/schemas/Score'
       
-    /score/group/{id}:              
+    /api/score/group/{id}:              
       get:
         parameters:
         - name: id
@@ -517,7 +517,7 @@ paths:
           200:
             description: Result of the operation
 
-    /images:
+    /api/images:
       get:
         tags:
          - Image
@@ -555,7 +555,7 @@ paths:
               application/json:
                 schema:
                   $ref: '#/components/schemas/Image'
-    /images/{id}:
+    /api/images/{id}:
       get:
         tags:
          - Image
@@ -625,7 +625,7 @@ paths:
           '404':
             description: Image not found
             
-    /image/race/{id}:
+    /api/image/race/{id}:
       get:
         parameters:
           - name: id
@@ -770,6 +770,3 @@ components:
             ReachedTime:
               type: string
       
-          
-        
-          

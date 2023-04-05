@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'theme.css';
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+mat-toolbar {
+    background-color: var(--my-app-primary);
+    color: white;
+  }
+  
+  mat-card {
+    background-color: var(--my-app-background);
+  }
+  
+  mat-icon {
+    color: var(--my-app-accent);
+  }
+  
+  button.mat-button {
+    background-color: var(--my-app-accent);
+    color: white;
+  }
+  
+  button.mat-raised-button {
+    background-color: var(--my-app-primary);
+    color: white;
+  }
+  
+  .mat-menu-panel {
+    background-color: var(--my-app-background);
+  }
