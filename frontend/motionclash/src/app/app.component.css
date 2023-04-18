@@ -1,0 +1,19 @@
+.secondary-container-frame {
+  background-color: #F5E6C9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary-container-frame {
+  background-color: #34272E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+}

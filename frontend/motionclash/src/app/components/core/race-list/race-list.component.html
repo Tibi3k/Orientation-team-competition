@@ -1,0 +1,12 @@
+<div class="primary-container-frame">
+  <div class="main-container">
+    <div *ngFor="let race of races" class="race-field" [routerLink]="['/race',race.id]">
+      <mat-card class="race-card">
+        <mat-card-content class="card-content" >
+          <span>{{race.name | uppercase}}</span>
+          <span>{{race.startDate}}</span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

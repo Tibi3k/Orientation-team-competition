@@ -1,0 +1,31 @@
+<mat-toolbar color="primary" class="header-background">
+    <div class="content">
+        <button mat-icon-button aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>
+            <a routerLink="/">Motionclash</a>
+        </span>
+        <span class="spacer"></span>
+
+        <ul>
+            <!-- <li *ngIf="userIsAuthenticated">
+                <a mat-button routerLink="/profile" routerLinkActive="mat-accent">Profile</a>
+            </li> -->
+            <li *ngIf="userIsAuthenticated">
+                <a mat-button [routerLink]="['/myraces']" routerLinkActive="mat-accent">MY RACES</a>
+            </li>
+            <li *ngIf="userIsAuthenticated">
+                <a mat-button [routerLink]="['/upcoming']" routerLinkActive="mat-accent">UPCOMING RACES</a>
+            </li>
+            <li *ngIf="userIsAuthenticated">
+                <a mat-button routerLink="/past" routerLinkActive="mat-accent">PAST RACES</a>
+            </li>
+            <li>
+                <button mat-button (click)="onLoginClicked()">
+                    {{this.userIsAuthenticated == false ? "Log In" : "LogOut"}}
+                </button>
+            </li>
+        </ul>
+    </div>
+</mat-toolbar>

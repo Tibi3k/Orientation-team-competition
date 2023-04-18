@@ -15,6 +15,8 @@ import { Waypoint } from './waypoint';
 
 export interface Race { 
     id?: string;
+    name?: string;
+    startDate?: string;
     teams?: Array<UserGroup>;
     eventImages?: Array<Image>;
     waypoints?: Array<Waypoint>;

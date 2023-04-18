@@ -6,14 +6,24 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiModule } from './api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { ToolbarComponent } from './components/core/toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { LandingComponent } from './components/frames/landing/landing.component';
+import { RaceListComponent } from './components/core/race-list/race-list.component';
+import { RacesComponent } from './components/frames/races/races.component';
+import {MatCardModule} from '@angular/material/card';
+import { RaceDetailsComponent } from './components/frames/race-details/race-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    LandingComponent,
+    RaceListComponent,
+    RacesComponent,
+    RaceDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +32,9 @@ import { MatButtonModule } from '@angular/material/button';
     ApiModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

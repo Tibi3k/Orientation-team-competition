@@ -3,32 +3,24 @@
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #483C3E;}
 
+.secondary-container-frame {
+  background-color: #F5E6C9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-mat-toolbar {
-    background-color: var(--my-app-primary);
-    color: white;
-  }
-  
-  mat-card {
-    background-color: var(--my-app-background);
-  }
-  
-  mat-icon {
-    color: var(--my-app-accent);
-  }
-  
-  button.mat-button {
-    background-color: var(--my-app-accent);
-    color: white;
-  }
-  
-  button.mat-raised-button {
-    background-color: var(--my-app-primary);
-    color: white;
-  }
-  
-  .mat-menu-panel {
-    background-color: var(--my-app-background);
-  }
+.primary-container-frame {
+  background-color: #483C3E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+}
