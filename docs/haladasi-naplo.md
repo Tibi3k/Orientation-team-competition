@@ -48,3 +48,21 @@ Ezzel volt annyi érdekesség hogy a kotlin nyelv nem megadható az online felü
 Jelenleg már mindkét projekt helyesen működik alapvető működésekben. Létrehoztam előre egy proxyt, hogy  a CORS hibákkal ne legyen probléma fjelesztés során.
 
 Végül próbáltam átírni a beépített material-theme alap színeit saját színekre mert én is egy hasonló színcsomagból dolgozok és jó lenne ha nem kellene ezeket mindenhol megadni, hanem az amgular material igazodna hozzá, de ezzel még nem jártam sikerrel.
+
+# 7.hét
+
+A hét során elkészítettem az alapvető kliens oldali működéseket Angulárban.
+
+Elkészült a Landing page és a részletes nézet is.
+
+Sikerült integrálni a swaggerből generált serviceket.
+
+# 9.hét
+
+A héten a backend alapjait készítettem el.
+
+Sok kisebb fennakadással kellett megküzdenem közben főleg konfigurációs problémák miatt.
+
+Elkészültek az alapvető API működések és a data layer is az alkalmazásban
+
+Egyenlőre csak postmanből teszteltem a klienssel való összekötés és tesztelés még hátra van itt vanlószínüleg még finomhangolni kell pár dolgot.

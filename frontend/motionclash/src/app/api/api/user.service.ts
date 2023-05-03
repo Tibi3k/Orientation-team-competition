@@ -15,7 +15,7 @@ import { HttpClient, HttpHeaders, HttpParams,
          HttpResponse, HttpEvent }                           from '@angular/common/http';
 import { CustomHttpUrlEncodingCodec }                        from '../encoder';
 
-import { Observable }                                        from 'rxjs';
+import { BehaviorSubject, Observable }                                        from 'rxjs';
 
 import { User } from '../model/user';
 
@@ -29,6 +29,7 @@ export class UserService {
     protected basePath = 'https://localhost:7000';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
+    public isAuthenticated = new BehaviorSubject<boolean>(false);
 
     constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: Configuration) {
         if (basePath) {

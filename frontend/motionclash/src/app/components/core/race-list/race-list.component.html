@@ -1,5 +1,10 @@
 <div class="primary-container-frame">
   <div class="main-container">
+    <div class="race-field">
+      <div class="new-element-container" [routerLink]="['/race/new']">
+        <span class="new-race">CREATE NEW RACE</span>
+      </div>
+    </div>
     <div *ngFor="let race of races" class="race-field" [routerLink]="['/race',race.id]">
       <mat-card class="race-card">
         <mat-card-content class="card-content" >

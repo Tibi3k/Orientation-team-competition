@@ -11,6 +11,7 @@
  */
 
 export interface Waypoint { 
-    latitiude?: number;
+    latitude?: number;
     longitude?: number;
+    name: string
 }

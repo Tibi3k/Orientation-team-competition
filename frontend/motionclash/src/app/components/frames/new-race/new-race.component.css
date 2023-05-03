@@ -1,0 +1,10 @@
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  flex-basis: calc(50% - 10px);
+  margin-right: 20px;
+}

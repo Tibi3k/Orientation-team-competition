@@ -17,6 +17,9 @@ export interface Race {
     id?: string;
     name?: string;
     startDate?: string;
+    endDate?: string;
+    startHour?: string;
+    endHour?: string;
     teams?: Array<UserGroup>;
     eventImages?: Array<Image>;
     waypoints?: Array<Waypoint>;

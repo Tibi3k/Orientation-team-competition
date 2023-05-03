@@ -1,16 +1,24 @@
-import { Component } from '@angular/core';
-import { Race } from 'src/app/api';
+import { Component, OnInit } from '@angular/core';
+import { Race, UserService } from 'src/app/api';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css']
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit {
+  constructor(private authService: UserService){}
+
+  ngOnInit(): void {
+    this.authService.isAuthenticated.subscribe(value => {
+      this.userIsAuthenticated = value
+    })
+  }
+
   userIsAuthenticated = false;
   races: Race[] = []
   onLoginClicked(){
-    this.userIsAuthenticated = !this.userIsAuthenticated;
+    this.authService.isAuthenticated.next(!this.userIsAuthenticated)
   }
 }
   

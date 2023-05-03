@@ -1,5 +1,40 @@
 <div class="primary-container-frame">
   <div class="main-container">
-    <img src="/assets/map-sample.png">
+    <div class="race-title">
+      <span class="race-name">{{race?.name}}</span>
+      <span class="race-date">{{race?.startDate}} {{race?.startHour}} - {{race?.endDate}} {{race?.endHour}}</span>
+    </div>
+    <div class="map-and-teams">
+      <img src="/assets/map-sample.png">
+      <div>
+        <span class="form-label">Create a new team:</span>
+        <form class="create-team-form">
+          <mat-form-field class="create-team-form-field">
+            <mat-label>Team name</mat-label>
+            <input type="text" matInput [formControl]="emailFormControl">
+          </mat-form-field>
+          <button mat-button class="submit-button">Create</button>
+        </form>
+      </div>
+    </div>
+    <table mat-table [dataSource]="this.race?.waypoints ?? []">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let waypoint">{{waypoint.name}}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="latitude">
+        <th mat-header-cell *matHeaderCellDef>Latitude</th>
+        <td mat-cell *matCellDef="let waypoint">{{waypoint.latitude}}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="longitude">
+        <th mat-header-cell *matHeaderCellDef>Longitude</th>
+        <td mat-cell *matCellDef="let waypoint">{{waypoint.longitude}}</td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
   </div>
 </div>

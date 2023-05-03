@@ -18,3 +18,18 @@
   color: #34272E;
 }
 
+.new-element-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 75%;
+  margin-top: 20px;
+  background-color: #F5E6C9;
+}
+
+.new-race{
+  color: #34272E;
+  font-weight: 500;
+  font-size: 20px;
+}
+

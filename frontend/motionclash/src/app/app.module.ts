@@ -15,7 +15,14 @@ import { RaceListComponent } from './components/core/race-list/race-list.compone
 import { RacesComponent } from './components/frames/races/races.component';
 import {MatCardModule} from '@angular/material/card';
 import { RaceDetailsComponent } from './components/frames/race-details/race-details.component';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { NewRaceComponent } from './components/frames/new-race/new-race.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +30,8 @@ import { RaceDetailsComponent } from './components/frames/race-details/race-deta
     LandingComponent,
     RaceListComponent,
     RacesComponent,
-    RaceDetailsComponent
+    RaceDetailsComponent,
+    NewRaceComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +42,14 @@ import { RaceDetailsComponent } from './components/frames/race-details/race-deta
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
