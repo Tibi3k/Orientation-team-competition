@@ -15,6 +15,6 @@ data class UserGroup(
     @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
     @JoinColumn(name = "group_id")
     val users: List<User>,
-    @OneToOne(mappedBy = "userGroup")
+    @OneToOne
     val score: Score
 )

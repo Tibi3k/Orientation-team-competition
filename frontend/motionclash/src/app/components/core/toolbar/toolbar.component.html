@@ -26,6 +26,11 @@
                     {{this.userIsAuthenticated == false ? "Log In" : "LogOut"}}
                 </button>
             </li>
+            <li *ngIf="!this.userIsAuthenticated">
+                <button mat-button (click)="onSignUpClicked()">
+                    Sign up
+                </button>
+            </li>
         </ul>
     </div>
 </mat-toolbar>

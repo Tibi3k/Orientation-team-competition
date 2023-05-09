@@ -3,6 +3,7 @@ package com.example.demo.model
 import com.example.demo.dto.ActiveWaypointDTO
 import jakarta.persistence.*
 
+@Entity
 data class Score(
     @Id
     @GeneratedValue

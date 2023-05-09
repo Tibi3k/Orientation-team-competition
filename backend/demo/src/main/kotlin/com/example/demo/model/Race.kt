@@ -16,6 +16,8 @@ data class Race(
     @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
     @JoinColumn(name = "race_id")
     val eventImages: List<Image>,
+    @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
+    @JoinColumn(name = "race_id")
     val waypoints: List<Waypoint>,
     @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
     @JoinColumn(name = "race_id")

@@ -8,5 +8,7 @@ import org.springframework.stereotype.Component
 
 @Component
 @Mapper(componentModel = "spring")
-public class ImageMapper {
+interface ImageMapper {
+    fun toDTO(image: Image): ImageDTO
+    fun toEntity(imageDTO: ImageDTO): Image
 }

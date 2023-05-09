@@ -7,7 +7,7 @@ plugins {
 	id 'org.jetbrains.kotlin.plugin.spring' version '1.7.22'
 	id 'org.jetbrains.kotlin.plugin.jpa' version '1.7.22'
 	//mapstruct
-	//id "org.mapstruct" version "1.4.2.Final"
+	id "org.mapstruct"
 }
 
 group = 'com.example'
@@ -23,6 +23,7 @@ configurations {
 wrapper {
 	gradleVersion = '7.3'
 }
+
 repositories {
 	mavenCentral()
 	jcenter()
@@ -44,8 +45,10 @@ dependencies {
 	implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre17'
 	runtimeOnly 'com.h2database:h2'
 	//mapstruct
-	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
-	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+	implementation 'org.mapstruct:mapstruct'
+	annotationProcessor 'org.mapstruct:mapstruct-processor'
+	//cognito
+	implementation 'com.amazonaws:aws-java-sdk-cognitoidp:1.12.188'
 }
 
 tasks.withType(KotlinCompile) {

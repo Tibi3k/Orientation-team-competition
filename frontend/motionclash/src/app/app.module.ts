@@ -23,6 +23,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { NewRaceComponent } from './components/frames/new-race/new-race.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { LoginComponent } from './components/core/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { SignupComponent } from './components/core/signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     RaceListComponent,
     RacesComponent,
     RaceDetailsComponent,
-    NewRaceComponent
+    NewRaceComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatTableModule,
     MatPaginatorModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

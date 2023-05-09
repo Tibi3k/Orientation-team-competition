@@ -66,3 +66,16 @@ Sok kisebb fennakadással kellett megküzdenem közben főleg konfigurációs pr
 Elkészültek az alapvető API működések és a data layer is az alkalmazásban
 
 Egyenlőre csak postmanből teszteltem a klienssel való összekötés és tesztelés még hátra van itt vanlószínüleg még finomhangolni kell pár dolgot.
+
+
+# 10.hét
+
+A héten a felhasználókezeléssel foglalkoztam.
+
+Először is utánnanéztem milyen felhasnzálókezelési megoldások vannak és az Amazon Cognitot választottam. 
+
+Ezután a client integrálásával folytattam, létrehoztam egy alap login és signup oldalt és egy authService-t. 
+
+Ezeket bekötöttem a megfelelő konfigurációkkal így már lehet regisztrálni az alkalmazásba. Emellett elkészítettem egy interceptort is ami az access tokent teszi fel a backend felé küldött kérésekre.
+
+Elkezdtem a szerver oldalon is implementálni az authentikációt spring securityn keresztül, ez még folyamatban van.
