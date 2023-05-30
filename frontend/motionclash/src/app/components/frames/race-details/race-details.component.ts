@@ -1,7 +1,7 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Race, UserService } from 'src/app/api';
+import { Race, ScoreService, UserService } from 'src/app/api';
 
 @Component({
   selector: 'app-race-details',
@@ -11,7 +11,8 @@ import { Race, UserService } from 'src/app/api';
 export class RaceDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
-              private authService: UserService) {}
+              private authService: UserService,
+              private scoreService: ScoreService) {}
 
   emailFormControl = new FormControl('', [Validators.required]);
 
@@ -40,6 +41,9 @@ export class RaceDetailsComponent implements OnInit {
       }
     })
 
+    this.scoreService.getAllScores("body").subscribe(scores => {
+      console.log(scores)
+    })
     this.authService.isAuthenticated.subscribe(value => {
       this.isUserAuthenticated = value
     })

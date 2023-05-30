@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ApiModule } from './api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './components/core/toolbar/toolbar.component';
@@ -26,6 +26,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { LoginComponent } from './components/core/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './components/core/signup/signup.component';
+import { AuthInterceptor } from './services/auth-interceptor';
+import { GoogleMapsModule } from '@angular/google-maps'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,9 +58,16 @@ import { SignupComponent } from './components/core/signup/signup.component';
     MatPaginatorModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    GoogleMapsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,7 +7,8 @@ plugins {
 	id 'org.jetbrains.kotlin.plugin.spring' version '1.7.22'
 	id 'org.jetbrains.kotlin.plugin.jpa' version '1.7.22'
 	//mapstruct
-	id "org.mapstruct"
+	//id "org.jetbrains.kotlin.kapt" version "1.8.21"
+	//id "org.mapstruct"
 }
 
 group = 'com.example'
@@ -42,13 +43,22 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
-	implementation 'com.microsoft.sqlserver:mssql-jdbc:11.2.0.jre17'
+	implementation 'org.postgresql:postgresql'
 	runtimeOnly 'com.h2database:h2'
+
 	//mapstruct
-	implementation 'org.mapstruct:mapstruct'
-	annotationProcessor 'org.mapstruct:mapstruct-processor'
+	implementation 'org.mapstruct:mapstruct:1.5.2.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+	//annotationProcessor 'org.mapstruct:mapstruct-processor'
+
 	//cognito
 	implementation 'com.amazonaws:aws-java-sdk-cognitoidp:1.12.188'
+	implementation("io.jsonwebtoken:jjwt-api:0.11.2")
+	implementation("io.jsonwebtoken:jjwt-impl:0.11.2")
+	implementation("io.jsonwebtoken:jjwt-jackson:0.11.2")
 }
 
 tasks.withType(KotlinCompile) {
