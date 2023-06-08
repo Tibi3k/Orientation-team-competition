@@ -1,8 +1,8 @@
 package com.example.demo.dto
 
-data class RaceDTO(
-    val id: String,
-    val teams: List<UserGroupDTO>,
-    val eventImages: List<ImageDTO>,
-    val waypoints: List<WaypointDTO>
-)
+class RaceDTO {
+    val id: Long = 0
+    val teams: MutableList<UserGroupDTO> = mutableListOf()
+    val eventImages: MutableList<ImageDTO> = mutableListOf()
+    val waypoints: MutableList<WaypointDTO> = mutableListOf()
+}

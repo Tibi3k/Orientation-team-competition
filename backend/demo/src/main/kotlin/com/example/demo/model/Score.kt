@@ -4,15 +4,15 @@ import com.example.demo.dto.ActiveWaypointDTO
 import jakarta.persistence.*
 
 @Entity
-data class Score(
+open class Score {
     @Id
-    @GeneratedValue
-    val id: Long,
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    open var id: Long = 0
     @ManyToOne
-    val race: Race,
+    open lateinit var race: Race
     @OneToOne
-    val group: UserGroup,
+    open lateinit var group: UserGroup
     @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
     @JoinColumn(name = "score_id")
-    val routePoints: List<ActiveWaypoint> = emptyList(),
-    )
+    open var routePoints: MutableList<ActiveWaypoint> = mutableListOf()
+}

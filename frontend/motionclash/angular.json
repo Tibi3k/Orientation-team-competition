@@ -65,7 +65,8 @@
               "browserTarget": "motionclash:build:production"
             },
             "development": {
-              "browserTarget": "motionclash:build:development"
+              "browserTarget": "motionclash:build:development",
+              "proxyConfig": "proxy.conf.js"
             }
           },
           "defaultConfiguration": "development"

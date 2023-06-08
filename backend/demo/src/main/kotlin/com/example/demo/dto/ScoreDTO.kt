@@ -1,8 +1,8 @@
 package com.example.demo.dto
 
-data class ScoreDTO(
-    val id: String,
-    val raceId: String,
-    val groupId: String,
-    val routePoints: List<ActiveWaypointDTO>
-)
+class ScoreDTO {
+    val id: Long = 0
+    val raceId: Long = 0
+    val groupId: Long = 0
+    val routePoints: MutableList<ActiveWaypointDTO> = mutableListOf()
+}

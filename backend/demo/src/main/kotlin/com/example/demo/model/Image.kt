@@ -1,19 +1,17 @@
 package com.example.demo.model
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Id
-import jakarta.persistence.ManyToOne
+import jakarta.persistence.*
 import java.util.UUID
 
 @Entity
-public data class Image(
+open class Image {
     @Id
-    @GeneratedValue
-    val id: Long?,
-    val name: String?,
-    val imageType: String?,
-    val imagePath: String?,
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    open var id: Long = 0
+    open var name: String = ""
+    open var imageType: String = ""
+    open var imagePath: String = ""
+
     @ManyToOne
-    val race: Race
-)
+    open lateinit var race: Race
+}

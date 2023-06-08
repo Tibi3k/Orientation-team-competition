@@ -3,18 +3,22 @@ package com.example.demo.model
 import jakarta.persistence.*
 
 @Entity
-data class UserGroup(
+open class UserGroup {
     @Id
-    @GeneratedValue
-    val id: Long,
-    val groupName: String,
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    open var id: Long = 0
+    open var groupName: String = ""
+
+    @OneToOne
+    open lateinit var leader: Users
+
     @ManyToOne
-    val leader: User,
-    @ManyToOne
-    val race: Race,
+    open lateinit var race: Race
+
     @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
     @JoinColumn(name = "group_id")
-    val users: List<User>,
+    open var users: MutableList<Users> = mutableListOf()
+
     @OneToOne
-    val score: Score
-)
+    open lateinit var score: Score
+}

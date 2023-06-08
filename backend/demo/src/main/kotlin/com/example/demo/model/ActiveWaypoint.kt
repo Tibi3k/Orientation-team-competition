@@ -4,16 +4,14 @@ import jakarta.persistence.*
 import java.time.LocalDateTime
 
 @Entity
-data class ActiveWaypoint(
+open class ActiveWaypoint {
     @Id
-    @GeneratedValue
-    val id: Long? = null,
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    open var id: Long = 0
+    @OneToOne
+    open lateinit var waypoint: Waypoint
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "waypoint_id")
-    val waypoint: Waypoint,
-
-    val isVisited: Boolean,
-    val arrivalTime: LocalDateTime?,
-    val completionTime: LocalDateTime?,
-)
+    open var isVisited: Boolean = false
+    open var arrivalTime: LocalDateTime? = null
+    open var completionTime: LocalDateTime? = null
+}

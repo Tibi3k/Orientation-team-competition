@@ -6,20 +6,24 @@ import com.example.demo.dto.WaypointDTO
 import jakarta.persistence.*
 
 @Entity
-data class Race(
+open class Race {
     @Id
-    @GeneratedValue
-    val id: Long,
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    open var id: Long = 0
+
     @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
     @JoinColumn(name = "race_id")
-    val teams: List<UserGroup>,
+    open var teams: MutableList<UserGroup> = mutableListOf()
+
     @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
     @JoinColumn(name = "race_id")
-    val eventImages: List<Image>,
+    open var eventImages: MutableList<Image> = mutableListOf()
+
     @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
     @JoinColumn(name = "race_id")
-    val waypoints: List<Waypoint>,
+    open var waypoints: MutableList<Waypoint> = mutableListOf()
+
     @OneToMany(cascade = [CascadeType.ALL], orphanRemoval = true)
     @JoinColumn(name = "race_id")
-    val scores: List<Score>
-)
+    open var scores: MutableList<Score> = mutableListOf()
+}

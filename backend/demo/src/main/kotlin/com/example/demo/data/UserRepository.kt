@@ -1,7 +1,7 @@
 package com.example.demo.data
 
-import com.example.demo.model.User
+import com.example.demo.model.Users
 import org.springframework.data.repository.CrudRepository
 
-interface UserRepository : CrudRepository<User, Long> {
+interface UserRepository : CrudRepository<Users, Long> {
 }
